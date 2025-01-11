@@ -31,7 +31,7 @@ def create_hero(hero_in: HeroIn, session: Session = Depends(get_session)):
     hero.name = hero_in.name
     hero.secret_name = hero_in.secret_name
     hero.age = hero_in.age
-    hero.updated_at = datetime.now()
+    hero.updated_at = datetime.now(ZoneInfo("Asia/Tokyo"))
     print(hero.updated_at)
     session.add(hero)
     session.commit()
